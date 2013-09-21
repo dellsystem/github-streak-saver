@@ -1,7 +1,7 @@
-Your daily SMS reminder to commit to Github
-===========================================
+Your daily SMS reminder to git commit
+=====================================
 
-CAN'T BREAK THAT STREAK
+CAN'T BREAK THAT CONTRIBUTION STREAK
 
 Inspired by <https://ryanseys.com/blog/177-days-of-github/>. I'm aiming for at
 least 178.
