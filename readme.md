@@ -23,6 +23,10 @@ receive messages on that phone.
 Setting up your crontab
 -----------------------
 
+You really only need one line in your crontab, if you want to make it a daily
+reminder. But if you're like me, then you probably don't think that a single
+reminder a day is sufficient. Here's what my crontab looks like:
+
 ```crontab
 0 18 * * * /edit/this/send_sms.py "You haven't committed yet!"
 0 19 * * * /edit/this/send_sms.py "Still haven't committed ..."
@@ -35,6 +39,9 @@ Setting up your crontab
 0 2 * * * /edit/this/send_sms.py "It doesn't have to be good, just don't break your streak please"
 0 3 * * * /edit/this/send_sms.py "You fucked up"
 ```
+
+(Edit with `crontab -e`.)
+
 Licensing
 ---------
 
