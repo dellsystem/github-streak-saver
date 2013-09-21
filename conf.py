@@ -1,0 +1,5 @@
+TO = "+15555555555"
+FROM = "+15555555555"
+ACCOUNT_SID = "Your account SID"
+AUTH_TOKEN = "Your auth token"
+USERNAME = "Your username"
