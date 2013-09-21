@@ -35,3 +35,7 @@ Setting up your crontab
 0 2 * * * /edit/this/send_sms.py "It doesn't have to be good, just don't break your streak please"
 0 3 * * * /edit/this/send_sms.py "You fucked up"
 ```
+Licensing
+---------
+
+MIT license.
