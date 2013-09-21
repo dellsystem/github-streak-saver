@@ -3,6 +3,9 @@ Your daily SMS reminder to commit to Github
 
 CAN'T BREAK THAT STREAK
 
+Inspired by <https://ryanseys.com/blog/177-days-of-github/>. I'm aiming for at
+least 178.
+
 Requirements
 ------------
 
