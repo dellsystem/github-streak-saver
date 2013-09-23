@@ -30,7 +30,7 @@ if request.ok:
         commits_today = data[-1][1]
 
         if not commits_today:
-          send(message)
+            send(message)
     except:
         send('There was an error getting the number of commits today')
 else:
