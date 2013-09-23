@@ -37,7 +37,7 @@ reminder a day is sufficient. Here's what my crontab looks like:
 0 0 * * * /edit/this/send_sms.py "It's midnight. You're lucky Github uses PST."
 0 1 * * * /edit/this/send_sms.py "I hope you're still awake because you have 2 hours to commit something."
 0 2 * * * /edit/this/send_sms.py "It doesn't have to be good, just don't break your streak please"
-0 3 * * * /edit/this/send_sms.py "You fucked up"
+59 2 * * * /edit/this/send_sms.py "You fucked up"
 ```
 
 (Edit with `crontab -e`.)
