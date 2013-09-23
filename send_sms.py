@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 
-import datetime
 import json
 import sys
 
 import requests
-import pytz
 from twilio.rest import TwilioRestClient
 
 import conf
@@ -25,16 +23,15 @@ client = TwilioRestClient(conf.ACCOUNT_SID, conf.AUTH_TOKEN)
 url = 'https://github.com/users/%s/contributions_calendar_data' % conf.USERNAME
 request = requests.get(url)
 if request.ok:
-    data = json.loads(request.text)
+    try:
+        data = json.loads(request.text)
 
-    # Get data for the latest contribution
-    latest_contribution = datetime.datetime.strptime(data[-1][0], '%Y/%m/%d')
+        # Get the number of commits made today
+        commits_today = data[-1][1]
 
-    # Find out today's date in PST (since Github uses PST)
-    today = datetime.datetime.now(pytz.timezone('US/Pacific'))
-
-    # Haven't contributed anything today?
-    if latest_contribution.date() < today.date():
-        send(message)
+        if not commits_today:
+          send(message)
+    except:
+        send('There was an error getting the number of commits today')
 else:
     send('There was a problem accessing the Github API :(')

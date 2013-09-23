@@ -1,3 +1,2 @@
-pytz==2013d
 requests==1.2.3
 twilio==3.6.1
