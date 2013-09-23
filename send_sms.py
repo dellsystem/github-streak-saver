@@ -27,14 +27,20 @@ request = requests.get(url)
 if request.ok:
     data = json.loads(request.text)
 
+    # Set to epoch begin just in case this is a totally new account
+    latest_contribution = datetime.datetime(1970, 1, 1, 0, 0)
+
     # Get data for the latest contribution
-    latest_contribution = datetime.datetime.strptime(data[-1][0], '%Y/%m/%d')
+    for i in reversed(data):
+        if i[1] > 0:
+            latest_contribution = datetime.datetime.strptime(i[0], '%Y/%m/%d')
+            break
 
     # Find out today's date in PST (since Github uses PST)
     today = datetime.datetime.now(pytz.timezone('US/Pacific'))
 
     # Haven't contributed anything today?
-    if latest_contribution.date() < today.date():
-        send(message)
+    if latest_contribution.date() < today.date():  
+      send(message)
 else:
     send('There was a problem accessing the Github API :(')
