@@ -1,10 +1,9 @@
 GitHub Streak Saver
 ===================
 
-Your daily reminder to keep up that contribution streak.
+Your daily SMS reminder to keep up that contribution streak.
 
-Inspired by <https://ryanseys.com/blog/177-days-of-github/>. I'm aiming for at
-least 178.
+Inspired by <https://ryanseys.com/blog/177-days-of-github/>.
 
 Requirements
 ------------
@@ -12,13 +11,24 @@ Requirements
 Requires Python 2.7. You can get the needed dependencies via `pip install -r
 requirements.txt`.
 
+You'll also need access to a server capable of running cronjobs, and a Twilio
+account for sending SMS (which you can get for free - see the next section).
+
 Installation instructions
 -------------------------
 
-Edit conf.py. Should be self-explanatory. If you don't have a Twilio account
-already, you can get a free trial [here](https://www.twilio.com/try-twilio).
-Note that you'll have to activate your phone number before you'll be able to
-receive messages on that phone.
+If you don't have a Twilio account already, you can get a free trial
+[here](https://www.twilio.com/try-twilio). Note that you'll have to activate
+your phone number before you'll be able to receive messages on that phone.
+
+Once your account has been set up, edit conf.py, using the details from your
+Twilio account. Then, run
+
+```bash
+git update-index --assume-unchanged conf.py
+```
+
+to ensure that your changes to conf.py are not tracked by Git.
 
 Setting up your crontab
 -----------------------
